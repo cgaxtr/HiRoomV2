@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">HiRoom</string>
+
+    <!-- Login -->
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_description_logo">Logo app</string>
+    <string name="login_forgotten_password">Forgotten Password?</string>
+    <string name="login_button">Login</string>
+    <string name="login_hide_show">Hide or show password </string>
+    <string name="login_sing_up">Create account</string>
+
 </resources>
