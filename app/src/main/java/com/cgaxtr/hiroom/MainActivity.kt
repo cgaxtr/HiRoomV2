@@ -10,6 +10,10 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.cgaxtr.hiroom.navigation.Screen
+import com.cgaxtr.hiroom.navigation.SetupNavGraph
 import com.cgaxtr.hiroom.ui.screens.LoginScreen
 import com.cgaxtr.hiroom.ui.theme.HiRoomTheme
 import com.cgaxtr.hiroom.ui.viewmodel.LoginViewModel
@@ -26,12 +30,12 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             HiRoomTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    LoginScreen(LoginViewModel())
+                    val navController = rememberNavController()
+                    SetupNavGraph(navController, Screen.Login.route)
                 }
             }
         }

@@ -10,4 +10,9 @@
     <string name="login_hide_show">Hide or show password </string>
     <string name="login_sing_up">Create account</string>
 
+    <!-- Sing Up -->
+    <string name="sing_up_login">Already have an account, login here</string>
+    <string name="sing_up_name">Name</string>
+    <string name="sing_up_sing_up">Sing Up</string>
+
 </resources>

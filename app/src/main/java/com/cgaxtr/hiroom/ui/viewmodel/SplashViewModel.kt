@@ -14,8 +14,8 @@ class SplashViewModel: ViewModel() {
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            //TODO check login and first open
-            Thread.sleep(2000)
+            //TODO check login and first time use
+            Thread.sleep(1000)
             _isLoading.postValue(false)
         }
     }
