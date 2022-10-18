@@ -94,8 +94,7 @@ fun Body(modifier: Modifier, viewModel: LoginViewModel, navController: NavHostCo
 fun ImageLogo(modifier: Modifier) {
     Image(
         modifier = modifier,
-        //todo change logo
-        painter = painterResource(id = R.drawable.ic_launcher_background),
+        painter = painterResource(id = R.drawable.logo),
         contentDescription = stringResource(id = R.string.login_description_logo)
     )
 }
