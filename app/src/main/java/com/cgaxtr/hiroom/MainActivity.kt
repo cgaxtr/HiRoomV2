@@ -22,6 +22,7 @@ import com.cgaxtr.hiroom.ui.viewmodel.SplashViewModel
 class MainActivity : ComponentActivity() {
 
     private val splashViewModel : SplashViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen().setKeepOnScreenCondition {
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-                    SetupNavGraph(navController, Screen.Login.route)
+                    SetupNavGraph(navController, Screen.Onboarding.route)
                 }
             }
         }
