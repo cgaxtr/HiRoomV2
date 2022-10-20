@@ -17,7 +17,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.cgaxtr.hiroom.R
 import com.cgaxtr.hiroom.navigation.Screen
 import com.cgaxtr.hiroom.ui.screens.onboardingScreen.OnBoardingPage
 import com.cgaxtr.hiroom.ui.viewmodel.OnboardingViewModel
