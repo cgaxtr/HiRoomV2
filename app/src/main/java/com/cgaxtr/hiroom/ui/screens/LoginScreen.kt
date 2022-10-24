@@ -20,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.R
 import com.cgaxtr.hiroom.navigation.Screen
@@ -32,7 +33,7 @@ import com.cgaxtr.hiroom.ui.viewmodel.LoginViewModel
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewLogin() {
-    val viewModel = LoginViewModel()
+    val viewModel: LoginViewModel = hiltViewModel()
     val navController = NavHostController(LocalContext.current)
     LoginScreen(viewModel, navController)
 }

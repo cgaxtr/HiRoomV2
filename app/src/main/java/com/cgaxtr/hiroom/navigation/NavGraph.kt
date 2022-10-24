@@ -1,6 +1,7 @@
 package com.cgaxtr.hiroom.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -17,11 +18,13 @@ fun SetupNavGraph(navController: NavHostController, start: String
 ) {
    NavHost(navController = navController, startDestination = start){
        composable(Screen.Login.route){
-           LoginScreen(viewModel = LoginViewModel(), navController = navController)
+           val viewModel = hiltViewModel<LoginViewModel>()
+           LoginScreen(viewModel = viewModel, navController = navController)
        }
 
        composable(Screen.Register.route){
-           RegisterScreen(viewModel = RegisterViewModel(), navController = navController)
+           val viewModel = hiltViewModel<RegisterViewModel>()
+           RegisterScreen(viewModel = viewModel, navController = navController)
        }
 
        composable(Screen.Main.route){
@@ -29,7 +32,8 @@ fun SetupNavGraph(navController: NavHostController, start: String
        }
 
        composable(Screen.Onboarding.route){
-           OnboardingScreen(viewModel = OnboardingViewModel(), navController = navController)
+           val viewModel = hiltViewModel<OnboardingViewModel>()
+           OnboardingScreen(viewModel = viewModel, navController = navController)
        }
    }
 }

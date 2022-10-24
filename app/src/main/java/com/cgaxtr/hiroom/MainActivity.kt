@@ -18,7 +18,9 @@ import com.cgaxtr.hiroom.ui.screens.LoginScreen
 import com.cgaxtr.hiroom.ui.theme.HiRoomTheme
 import com.cgaxtr.hiroom.ui.viewmodel.LoginViewModel
 import com.cgaxtr.hiroom.ui.viewmodel.SplashViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val splashViewModel : SplashViewModel by viewModels()

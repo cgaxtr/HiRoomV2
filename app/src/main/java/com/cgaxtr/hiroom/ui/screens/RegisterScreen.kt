@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.R
 import com.cgaxtr.hiroom.navigation.Screen
@@ -34,7 +35,7 @@ import com.cgaxtr.hiroom.ui.viewmodel.RegisterViewModel
 @Preview
 @Composable
 fun RegisterPreview() {
-    val registerViewModel = RegisterViewModel()
+    val registerViewModel : RegisterViewModel = hiltViewModel()
     val navController = NavHostController(LocalContext.current)
     RegisterScreen(registerViewModel, navController)
 }
@@ -91,7 +92,7 @@ fun Body(modifier: Modifier, viewModel: RegisterViewModel, navController: NavHos
         val password: String by viewModel.password.observeAsState("")
         val firstSurname: String by viewModel.firstSurname.observeAsState("")
         val secondSurname: String by viewModel.secondSurname.observeAsState("")
-        
+
         RegisterHeader()
         Spacer(modifier = Modifier.height(48.dp))
         NameField(name) {

@@ -15,4 +15,12 @@
     <string name="sing_up_name">Name</string>
     <string name="sing_up_sing_up">Sing Up</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_title1">Publish</string>
+    <string name="onboarding_title2">Search</string>
+    <string name="onboarding_title3">Contact</string>
+    <string name="onboarding_description1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</string>
+    <string name="onboarding_description2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</string>
+    <string name="onboarding_description3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</string>
+
 </resources>
