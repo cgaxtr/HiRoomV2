@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.navigation.Screen
 import com.cgaxtr.hiroom.ui.screens.onboardingScreen.OnBoardingPage
@@ -59,7 +60,7 @@ fun OnboardingScreen(viewModel: OnboardingViewModel, navController: NavHostContr
             pagerState = pagerState,
             maxPages = pages.size
         ) {
-            viewModel.completed()
+            viewModel.completed(true)
             navController.popBackStack()
             navController.navigate(Screen.Login.route)
         }
@@ -132,7 +133,7 @@ fun ConfirmButton(modifier: Modifier, pagerState: PagerState, maxPages: Int, onC
 @Composable
 @Preview(showSystemUi = true)
 fun PreviewOnboarding() {
-    val viewModel = OnboardingViewModel()
+    val viewModel: OnboardingViewModel = hiltViewModel()
     val navController = NavHostController(LocalContext.current)
     OnboardingScreen(viewModel, navController)
 }
