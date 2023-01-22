@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.cgaxtr.hiroom.ui.screens.LoginScreen
 import com.cgaxtr.hiroom.ui.screens.MainScreen
-import com.cgaxtr.hiroom.ui.screens.OnboardingScreen
+import com.cgaxtr.hiroom.ui.screens.onboardingScreen.OnboardingScreen
 import com.cgaxtr.hiroom.ui.screens.RegisterScreen
 import com.cgaxtr.hiroom.ui.viewmodel.LoginViewModel
 import com.cgaxtr.hiroom.ui.viewmodel.OnboardingViewModel

@@ -1,4 +1,4 @@
-package com.cgaxtr.hiroom.ui.screens
+package com.cgaxtr.hiroom.ui.screens.onboardingScreen
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.navigation.Screen
-import com.cgaxtr.hiroom.ui.screens.onboardingScreen.OnBoardingPage
 import com.cgaxtr.hiroom.ui.viewmodel.OnboardingViewModel
 import com.google.accompanist.pager.*
 
@@ -30,8 +29,7 @@ fun OnboardingScreen(viewModel: OnboardingViewModel, navController: NavHostContr
     val pages = listOf(
         OnBoardingPage.First,
         OnBoardingPage.Second,
-        OnBoardingPage.Third,
-        OnBoardingPage.Second
+        OnBoardingPage.Third
     )
     val pagerState = rememberPagerState()
 
