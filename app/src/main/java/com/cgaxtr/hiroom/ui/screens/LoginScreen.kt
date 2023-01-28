@@ -23,6 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.R
+import com.cgaxtr.hiroom.navigation.AuthScreen
+import com.cgaxtr.hiroom.navigation.MainScreen
 import com.cgaxtr.hiroom.navigation.Screen
 import com.cgaxtr.hiroom.ui.components.EmailField
 import com.cgaxtr.hiroom.ui.components.Footer
@@ -61,7 +63,7 @@ fun LoginScreen(viewModel: LoginViewModel, navController: NavHostController) {
             modifier = Modifier.align(Alignment.BottomCenter),
             navController = navController,
             id = R.string.login_sing_up,
-            destination = Screen.Register.route
+            destination = AuthScreen.SignUp.route
         )
     }
 }
@@ -118,7 +120,7 @@ fun LoginButton(navController: NavHostController, onClick: () -> Unit) {
         shape = RoundedCornerShape(50),
         onClick = {
             onClick()
-            navController.navigate(Screen.Main.route)
+            navController.navigate(MainScreen.HomeScreen.route)
         }) {
         Text(text = stringResource(id = R.string.login_button))
     }

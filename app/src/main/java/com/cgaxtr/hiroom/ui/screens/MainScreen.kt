@@ -10,6 +10,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -36,14 +40,16 @@ fun MainScreen() {
 
 @Composable
 fun BottomBar() {
+    var selected by rememberSaveable { mutableStateOf((0)) }
+
     BottomNavigation() {
-        BottomNavigationItem(selected = false, onClick = { /*TODO*/ }, icon = {
+        BottomNavigationItem(selected = selected == 0, onClick = { selected = 0 }, icon = {
             Icon(
                 imageVector = Icons.Filled.Home,
                 contentDescription = ""
             )
         })
-        BottomNavigationItem(selected = false, onClick = { /*TODO*/ }, icon = {
+        BottomNavigationItem(selected = selected == 1, onClick = { selected = 1 }, icon = {
             Icon(
                 imageVector = Icons.Filled.Person,
                 contentDescription = ""

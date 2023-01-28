@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cgaxtr.hiroom.domain.LoadOnboardingStateUseCase
+import com.cgaxtr.hiroom.navigation.AuthScreen
+import com.cgaxtr.hiroom.navigation.Graph
 import com.cgaxtr.hiroom.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +22,7 @@ class SplashViewModel @Inject constructor(private val useCase: LoadOnboardingSta
     private val _isLoading = MutableLiveData(true)
     val isLoading : LiveData<Boolean> = _isLoading
 
-    private val _destination = MutableLiveData<String>(Screen.Onboarding.route)
+    private val _destination = MutableLiveData<String>(Graph.ONBOARDING)
     val destination : LiveData<String> = _destination
 
     init {
@@ -28,10 +30,10 @@ class SplashViewModel @Inject constructor(private val useCase: LoadOnboardingSta
 
             useCase.invoke().collect{
                 if(it){
-                    _destination.postValue(Screen.Login.route)
+                    _destination.postValue(Graph.AUTH)
                     Log.d("SPLASH_VIEW_MODEL","Login")
                 }else{
-                    _destination.postValue(Screen.Onboarding.route)
+                    _destination.postValue(Graph.ONBOARDING)
                     Log.d("SPLASH_VIEW_MODEL","Onboarding")
                 }
                 _isLoading.postValue(false)

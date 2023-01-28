@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.R
+import com.cgaxtr.hiroom.navigation.AuthScreen
+import com.cgaxtr.hiroom.navigation.MainScreen
 import com.cgaxtr.hiroom.navigation.Screen
 import com.cgaxtr.hiroom.ui.components.EmailField
 import com.cgaxtr.hiroom.ui.components.Footer
@@ -63,7 +65,7 @@ fun RegisterScreen(viewModel: RegisterViewModel, navController: NavHostControlle
             modifier = Modifier.align(Alignment.BottomCenter),
             navController = navController,
             id = R.string.sing_up_login,
-            destination = Screen.Login.route
+            destination = AuthScreen.Login.route
         )
     }
 }
@@ -171,7 +173,7 @@ fun RegisterButton(navController: NavHostController, onClick: () -> Unit) {
         onClick = {
             onClick()
             //Check before navigate
-            navController.navigate(Screen.Main.route)
+            navController.navigate(MainScreen.HomeScreen.route)
         }) {
         Text(text = stringResource(id = R.string.sing_up_sing_up))
     }

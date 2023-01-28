@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.cgaxtr.hiroom.navigation.AuthScreen
 import com.cgaxtr.hiroom.navigation.Screen
 import com.cgaxtr.hiroom.ui.viewmodel.OnboardingViewModel
 import com.google.accompanist.pager.*
@@ -60,7 +61,7 @@ fun OnboardingScreen(viewModel: OnboardingViewModel, navController: NavHostContr
         ) {
             viewModel.completed(true)
             navController.popBackStack()
-            navController.navigate(Screen.Login.route)
+            navController.navigate(AuthScreen.Login.route)
         }
     }
 }

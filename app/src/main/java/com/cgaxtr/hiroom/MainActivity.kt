@@ -11,7 +11,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
-import com.cgaxtr.hiroom.navigation.SetupNavGraph
+import com.cgaxtr.hiroom.navigation.RootNavigationGraph
 import com.cgaxtr.hiroom.ui.theme.HiRoomTheme
 import com.cgaxtr.hiroom.ui.viewmodel.SplashViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,10 +34,9 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-
                     val screen = splashViewModel.destination.observeAsState()
 
-                    SetupNavGraph(navController = navController, start = screen.value!!)
+                    RootNavigationGraph(navController = navController, startDestination = screen.value!!)
                 }
             }
         }
