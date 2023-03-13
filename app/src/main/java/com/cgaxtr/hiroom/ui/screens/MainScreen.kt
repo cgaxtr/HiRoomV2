@@ -1,5 +1,6 @@
 package com.cgaxtr.hiroom.ui.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
@@ -9,13 +10,13 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.Modifier
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.NavGraph
+import androidx.navigation.compose.rememberNavController
+import com.cgaxtr.hiroom.navigation.HomeNavGraph
 
 
 @Preview(showSystemUi = true)
@@ -24,36 +25,44 @@ fun PreviewMain() {
     MainScreen()
 }
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen() {
-    Scaffold(bottomBar = {
-        BottomBar()
-
-    }) { padding ->
-        Column(
-            modifier = Modifier
-                .padding(padding)){
-
-        }
+    val navController = rememberNavController()
+    Scaffold(
+        bottomBar = { BottomBar(navController) }
+    ) {
+        //TODO PaddingValues
+        HomeNavGraph(navController)
     }
 }
 
 @Composable
-fun BottomBar() {
-    var selected by rememberSaveable { mutableStateOf((0)) }
-
+fun BottomBar(navController: NavController) {
+    //TODD change index
+    var index by remember { mutableStateOf(0) }
     BottomNavigation() {
-        BottomNavigationItem(selected = selected == 0, onClick = { selected = 0 }, icon = {
+
+        BottomNavigationItem(selected = index == 0, onClick = { index = 0 }, icon = {
             Icon(
                 imageVector = Icons.Filled.Home,
-                contentDescription = ""
+                contentDescription = "Home"
             )
         })
-        BottomNavigationItem(selected = selected == 1, onClick = { selected = 1 }, icon = {
+
+        BottomNavigationItem(selected = index == 1, onClick = { index = 1; }, icon = {
+            Icon(
+                imageVector = Icons.Filled.Star,
+                contentDescription = "Favourite"
+            )
+        })
+
+        BottomNavigationItem(selected = index == 2, onClick = { index = 2; }, icon = {
             Icon(
                 imageVector = Icons.Filled.Person,
-                contentDescription = ""
+                contentDescription = "Profile"
             )
         })
+
     }
 }

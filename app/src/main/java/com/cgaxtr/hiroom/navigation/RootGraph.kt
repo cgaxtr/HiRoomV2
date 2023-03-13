@@ -2,7 +2,6 @@ package com.cgaxtr.hiroom.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,12 +13,14 @@ fun RootNavigationGraph(navController: NavHostController, startDestination: Stri
     NavHost(navController = navController, route = Graph.ROOT, startDestination = startDestination) {
 
         authNavGraph(navController = navController)
-        mainNavGraph(navController = navController)
         composable(route = Graph.ONBOARDING){
             OnboardingScreen(viewModel = hiltViewModel(), navController = navController)
         }
-    }
 
+        composable(route = Graph.MAIN){
+            MainScreen()
+        }
+    }
 }
 
 object Graph {

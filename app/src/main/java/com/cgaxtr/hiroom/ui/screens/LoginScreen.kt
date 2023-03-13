@@ -24,8 +24,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.cgaxtr.hiroom.R
 import com.cgaxtr.hiroom.navigation.AuthScreen
+import com.cgaxtr.hiroom.navigation.Graph
 import com.cgaxtr.hiroom.navigation.MainScreen
-import com.cgaxtr.hiroom.navigation.Screen
 import com.cgaxtr.hiroom.ui.components.EmailField
 import com.cgaxtr.hiroom.ui.components.Footer
 import com.cgaxtr.hiroom.ui.components.PasswordField
@@ -120,7 +120,7 @@ fun LoginButton(navController: NavHostController, onClick: () -> Unit) {
         shape = RoundedCornerShape(50),
         onClick = {
             onClick()
-            navController.navigate(MainScreen.HomeScreen.route)
+            navController.navigate(Graph.MAIN)
         }) {
         Text(text = stringResource(id = R.string.login_button))
     }

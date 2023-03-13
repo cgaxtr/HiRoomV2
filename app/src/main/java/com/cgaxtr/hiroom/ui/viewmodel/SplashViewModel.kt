@@ -1,18 +1,14 @@
 package com.cgaxtr.hiroom.ui.viewmodel
 
 import android.util.Log
-import androidx.compose.runtime.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cgaxtr.hiroom.domain.LoadOnboardingStateUseCase
-import com.cgaxtr.hiroom.navigation.AuthScreen
 import com.cgaxtr.hiroom.navigation.Graph
-import com.cgaxtr.hiroom.navigation.Screen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
